@@ -1,6 +1,6 @@
-# Dev environment
-pip
-autopep8
-
-# App
-flask
+flask==3.0.3
+google-generativeai==0.7.1
+python-dotenv==1.0.0
+gunicorn==21.2.0
+requests==2.31.0
+markdown

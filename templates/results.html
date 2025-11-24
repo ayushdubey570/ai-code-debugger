@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card results-card">
+    {% if error %}
+        <div class="alert alert-danger">
+            <h4>An Error Occurred</h4>
+            <p>{{ error }}</p>
+            <a href="/" class="btn btn-primary">Go Back</a>
+        </div>
+    {% elif results %}
+        <h1 style="text-align: center; color: #fdc500; margin-bottom: 2rem;">Debugging Analysis</h1>
+        <div class="results-content">
+            {{ results | safe }}
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="/" class="btn btn-primary">Debug Another File</a>
+        </div>
+    {% else %}
+        <div class="alert alert-info">
+            <h4>No results</h4>
+            <p>Something went wrong, please go back and try again</p>
+            <a href="/" class="btn btn-primary">Go Back</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

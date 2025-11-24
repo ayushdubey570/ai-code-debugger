@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card faq-card">
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="faq-item">
+        <h3>What programming languages are supported?</h3>
+        <p>Currently, the AI Debugger supports Python, JavaScript, Java, and C++. We are continuously working to add support for more languages in the future.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Is my code stored on your servers?</h3>
+        <p>No. We are committed to protecting your privacy and data security. The code and error message you submit are used for the analysis and are not saved on our servers or used for any other purpose.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How accurate is the AI's analysis?</h3>
+        <p>The AI provides highly accurate and relevant solutions for a wide range of common programming errors. However, it is not infallible. For very complex, novel, or highly specialized problems, the suggestions should be considered a starting point for your own investigation. Always review and test the provided code before implementing it in a production environment.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Are there any usage limits?</h3>
+        <p>Yes, to ensure fair usage and prevent abuse of the service, we have implemented a rate limit. If you make too many requests in a short period, you may be temporarily blocked from using the tool. This is a standard measure to maintain service quality for all users.</p>
+    </div>
+
+</div>
+{% endblock %}

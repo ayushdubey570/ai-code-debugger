@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AI Debugger</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="/" class="navbar-brand">
+                    <svg class="navbar-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.41,11.58l-9-9A2,2,0,0,0,11,2H4A2,2,0,0,0,2,4v7a2,2,0,0,0,0.59,1.41l9,9a2,2,0,0,0,2.83,0l7-7a2,2,0,0,0,0-2.83ZM10,12a2,2,0,1,1,2-2A2,2,0,0,1,10,12Z"/></svg>
+                    AI Debugger
+                </a>
+                <div class="navbar-links">
+                    <a href="/" class="navbar-link">Home</a>
+                    <a href="https://github.com/ayushdubey570/ai-debugger" target="_blank" class="navbar-link">GitHub</a>
+                    <a href="/about" class="navbar-link">About</a>
+                    <a href="/faq" class="navbar-link">FAQ</a>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+          {% block content %}{% endblock %}
+        </div>
+        {% block scripts %}{% endblock %}
+      </body>
+</html>

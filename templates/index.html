@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card two-column-card">
+    <div class="illustration-container">
+        <h1 class="illustration-title">Your Personal Debugging Assistant</h1>
+        <p class="illustration-subtitle">Stop wrestling with bugs. Let our AI analyze your code and provide you with a clear path to a solution.</p>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <div class="feature-text">
+                    <h3>Multi-Language Support</h3>
+                    <p>From Python to JavaScript, get expert analysis for a variety of languages.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                </div>
+                <div class="feature-text">
+                    <h3>Root Cause Analysis</h3>
+                    <p>Understand the “why” behind the error, not just the “what.”</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                </div>
+                <div class="feature-text">
+                    <h3>Step-by-Step Solutions</h3>
+                    <p>Receive a clear, actionable plan to fix your code.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-container">
+        <h2 class="form-title">Debug Your Code</h2>
+        <form action="/debug" method="POST" id="debug-form">
+            <div class="mb-3">
+                <label for="language" class="form-label">Programming Language</label>
+                <select class="form-select" id="language" name="language" required>
+                    <option value="python">Python</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="java">Java</option>
+                    <option value="c++">C++</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="code" class="form-label">Code</label>
+                <textarea id="code" name="code" rows="10" required placeholder="Paste your code here..."></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="error_message" class="form-label">Error Message / Stack Trace</label>
+                <textarea id="error_message" name="error_message" rows="4" required placeholder="Paste the error message here..."></textarea>
+            </div>
+            <div class="form-submit-container">
+                <button type="submit" class="btn btn-primary" id="submit-btn">
+                    <span class="btn-text">Debug Code</span>
+                    <div class="spinner">
+                        <div class="bounce1"></div>
+                        <div class="bounce2"></div>
+                        <div class="bounce3"></div>
+                    </div>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const debugForm = document.getElementById('debug-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.querySelector('.btn-text');
+    const spinner = document.querySelector('.spinner');
+
+    debugForm.addEventListener('submit', function() {
+        btnText.style.display = 'none';
+        spinner.style.display = 'flex';
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+    });
+</script>
+{% endblock %}
