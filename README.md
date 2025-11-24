@@ -27,7 +27,7 @@ Follow these steps to set up the project for local development.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/ayushdubey570/ai-code-debugger.git
 cd your-repo
 ```
 
