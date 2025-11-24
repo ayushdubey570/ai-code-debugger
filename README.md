@@ -1,83 +1,94 @@
-# Flask Debugging Helper for Google Cloud Run
+# AI-Powered Code Debugger
 
-This project is a Flask web application that helps developers debug code using Google's Gemini LLM. It's designed to be deployed to Google Cloud Run as a single container.
+[![GitHub stars](https://img.shields.io/github/stars/your-username/your-repo.svg?style=social)](https://github.com/your-username/your-repo)
+[![Python Version](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-3100/)
+[![Flask Version](https://img.shields.io/badge/flask-2.2.2-blue.svg)](https://flask.palletsprojects.com/en/2.2.x/)
+
+An intelligent web-based tool that leverages the power of Google's Gemini AI to help developers debug their code more efficiently. This application provides a user-friendly interface to submit code snippets and error messages, and in return, it offers a detailed analysis, a step-by-step solution, and best practices to prevent similar issues.
 
 ## Features
 
-- **Backend API**: A Flask-based API that takes code, an error message, and a programming language, and returns a debugging analysis from the Gemini API.
-- **Frontend UI**: A simple, mobile-responsive web interface for submitting code and viewing the debugging results.
-- **Google Cloud Run Ready**: Optimized for deployment on Google Cloud Run, including a `Dockerfile` and `gunicorn` for serving the application.
+-   **Multi-Language Support:** Analyzes code in Python, JavaScript, Java, and C++.
+-   **In-Depth Analysis:** Provides a root cause analysis to explain *why* an error occurs.
+-   **Step-by-Step Solutions:** Delivers clear, actionable steps to fix the code.
+-   **User-Friendly Interface:** A clean and intuitive web interface for a smooth user experience.
 
-## Getting Started
+## Technology Stack
 
-### Prerequisites
+-   **Backend:** Python, Flask
+-   **AI Model:** Google Gemini
+-   **Frontend:** HTML, CSS, JavaScript
+-   **Deployment:** Docker (Optional)
 
-- Python 3.11
-- Google Cloud SDK
-- A Google Cloud project with the Cloud Run and Cloud Build APIs enabled.
-- A Gemini API key from Google AI Studio.
+## Local Development Setup
 
-### Local Development
+Follow these steps to set up the project for local development.
 
-1. **Clone the repository:**
+### 1. Clone the Repository
 
-   ```bash
-   git clone https://github.com/your-username/debugging-helper.git
-   cd debugging-helper
-   ```
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+```
 
-2. **Create a virtual environment and install dependencies:**
+### 2. Set Up the Environment
 
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate
-   pip install -r requirements.txt
-   ```
+Create a `.env` file in the root of the project and add your Gemini API key.
 
-3. **Create a `.env` file:**
+```bash
+cp .env.example .env
+```
 
-   Create a `.env` file in the root of the project and add your Gemini API key:
+Now, open the `.env` file and add your API key:
 
-   ```
-   GEMINI_API_KEY=your_gemini_key_here
-   ```
+```
+GEMINI_API_KEY=your_api_key_here
+```
 
-4. **Run the application:**
+### 3. Install Dependencies
 
-   ```bash
-   python app.py
-   ```
+It is recommended to use a virtual environment to manage the project's dependencies.
 
-   The application will be available at `http://localhost:8080`.
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
-## Deployment to Google Cloud Run
+### 4. Run the Application
 
-1. **Build and deploy the application:**
+Once the dependencies are installed, you can run the application using the following command:
 
-   Replace `YOUR_PROJECT_ID` with your Google Cloud project ID.
+```bash
+python3 app.py
+```
 
-   ```bash
-   gcloud builds submit --tag gcr.io/YOUR_PROJECT_ID/debugger-app
-   gcloud run deploy debugger-app \
-     --image gcr.io/YOUR_PROJECT_ID/debugger-app \
-     --platform managed \
-     --region us-central1 \
-     --allow-unauthenticated \
-     --set-env-vars=GEMINI_API_KEY=your_gemini_key_here \
-     --port=8080
-   ```
+The application will be available at `http://127.0.0.1:5000`.
 
-2. **Access the deployed application:**
+## Docker Setup (Optional)
 
-   The command will output the URL of your deployed application.
+This project includes a `Dockerfile` for easy containerization.
 
-## Cost Optimization
+### 1. Build the Docker Image
 
-- **Minimum Instances**: To minimize costs, set the minimum number of instances to 0. This will allow the application to scale to zero when not in use.
-- **Request Timeout**: Adjust the request timeout to a reasonable value to avoid long-running requests from incurring unnecessary costs.
+```bash
+docker build -t ai-debugger .
+```
 
-## Troubleshooting
+### 2. Run the Docker Container
 
-- **502 Bad Gateway**: This error can occur if the application fails to start. Check the logs in the Google Cloud Console for more information.
-- **Rate Limiting**: The application has a simple in-memory rate limit of 10 requests per minute per IP address. If you exceed this limit, you will receive a `429 Too Many Requests` error.
-- **Invalid API Key**: If you provide an invalid Gemini API key, you will see an error message in the application.
+```bash
+docker run -p 5000:5000 -e GEMINI_API_KEY=your_api_key_here ai-debugger
+```
+
+The application will be available at `http://127.0.0.1:5000`.
+
+## Project Structure
+
+-   `app.py`: The main Flask application file.
+-   `templates/`: Contains the HTML templates for the web pages.
+-   `static/`: Contains the static files (CSS, JavaScript, images).
+-   `Dockerfile`: For building the Docker image.
+-   `requirements.txt`: The list of Python dependencies.
+-   `.env.example`: An example file for the environment variables.
+

@@ -1,22 +1,23 @@
-FROM python:3.11-slim
+# ---- Base Stage ----
+FROM python:3.10-slim as base
 
+# Set the working directory
 WORKDIR /app
+
+# Install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# ---- Production Stage ----
+FROM base as production
+
+# Set a non-root user
+RUN useradd --create-home appuser
+USER appuser
+WORKDIR /home/appuser/app
+
+# Copy the application code
 COPY . .
 
-# Create a non-root user and switch to it
-RUN useradd --create-home nonroot
-USER nonroot
-
-# Set environment variables
-ENV PORT 8080
-ENV FLASK_APP app.py
-ENV FLASK_RUN_HOST 0.0.0.0
-
-# Expose the port the app runs on
-EXPOSE 8080
-
-# Run the application using Gunicorn
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
+# Set the Gunicorn command to run the application
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
