@@ -1,10 +1,11 @@
 # AI-Powered Code Debugger
 
-[![GitHub stars](https://img.shields.io/github/stars/your-username/your-repo.svg?style=social)]([https://github.com/your-username/your-repo](https://github.com/ayushdubey570/ai-code-debugger))
 [![Python Version](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-3100/)
 [![Flask Version](https://img.shields.io/badge/flask-2.2.2-blue.svg)](https://flask.palletsprojects.com/en/2.2.x/)
 
 An intelligent web-based tool that leverages the power of Google's Gemini AI to help developers debug their code more efficiently. This application provides a user-friendly interface to submit code snippets and error messages, and in return, it offers a detailed analysis, a step-by-step solution, and best practices to prevent similar issues.
+
+Read blog here: ``` https://medium.com/@ayushdubey570/build-an-ai-powered-debugging-assistant-with-gemini-llm-and-google-cloud-run-2bce294fe6c3```
 
 ## Features
 
