@@ -1,6 +1,6 @@
 # AI-Powered Code Debugger
 
-[![GitHub stars](https://img.shields.io/github/stars/your-username/your-repo.svg?style=social)](https://github.com/your-username/your-repo)
+[![GitHub stars](https://img.shields.io/github/stars/your-username/your-repo.svg?style=social)]([https://github.com/your-username/your-repo](https://github.com/ayushdubey570/ai-code-debugger))
 [![Python Version](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-3100/)
 [![Flask Version](https://img.shields.io/badge/flask-2.2.2-blue.svg)](https://flask.palletsprojects.com/en/2.2.x/)
 
@@ -91,4 +91,13 @@ The application will be available at `http://127.0.0.1:5000`.
 -   `Dockerfile`: For building the Docker image.
 -   `requirements.txt`: The list of Python dependencies.
 -   `.env.example`: An example file for the environment variables.
+  
+##Demo?Screenshots
+<img width="1422" height="822" alt="Screenshot 2025-11-24 at 22-14-54 AI Debugger" src="https://github.com/user-attachments/assets/0ce959a5-298c-45c2-8b66-fa09330932a1" />
+<img width="1422" height="3361" alt="Screenshot 2025-11-24 at 22-16-34 AI Debugger" src="https://github.com/user-attachments/assets/5473f9c9-b4f1-4202-b249-4b1285c874ca" />
+
+
+https://github.com/user-attachments/assets/1cd304c9-6477-46c6-9711-a19ee7bacc81
+
+
 
