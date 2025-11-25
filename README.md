@@ -92,7 +92,9 @@ The application will be available at `http://127.0.0.1:5000`.
 -   `requirements.txt`: The list of Python dependencies.
 -   `.env.example`: An example file for the environment variables.
   
-##Demo?Screenshots
+## Demo/Screenshots
+```Checkout live demo here: https://ai-debugger-service-330833922078.us-east1.run.app/ ```
+
 <img width="1422" height="822" alt="Screenshot 2025-11-24 at 22-14-54 AI Debugger" src="https://github.com/user-attachments/assets/0ce959a5-298c-45c2-8b66-fa09330932a1" />
 <img width="1422" height="3361" alt="Screenshot 2025-11-24 at 22-16-34 AI Debugger" src="https://github.com/user-attachments/assets/5473f9c9-b4f1-4202-b249-4b1285c874ca" />
 
